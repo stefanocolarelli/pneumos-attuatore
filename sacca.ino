@@ -96,17 +96,17 @@ void simulaMovimentoRespiratorio() {
       }
     }
   }
-  delay(pausarespiro*3); // pausa raddoppiata, per simulare l'inattività post espirazione
+  delay(pausarespiro*3); // pausa per simulare l'inattività post espirazione
 }
 
 void cheyneStokes(){
   // Da ottimizzare, funzione prototipale per il respiro di Cheyne-Stokes
   for(int i=10;i>3;i--){
-    configuraRespiro(90,35,0,i);
+    configuraRespiro(90-i,40-i,0,i);
     simulaMovimentoRespiratorio(); 
   }
   for(int i=4;i<11;i++){
-    configuraRespiro(90,35,0,i);
+    configuraRespiro(90-i,40-i,0,i);
     simulaMovimentoRespiratorio(); 
   }
 delay(random(1200,1500)); 
